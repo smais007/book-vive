@@ -8,7 +8,7 @@
       "totalPages": 180,
       "rating": 4.5,
       "category": "Fiction",
-      "tags": ["Classic", "Romance", "Tragedy"],
+      "tags": ["Romance", "Tragedy"],
       "publisher": "Scribner",
       "yearOfPublishing": 1925
     },
@@ -21,7 +21,7 @@
       "totalPages": 328,
       "rating": 4.7,
       "category": "Fiction",
-      "tags": ["Dystopian", "Political", "Classic"],
+      "tags": ["Dystopian", "Political"],
       "publisher": "Secker & Warburg",
       "yearOfPublishing": 1949
     },
@@ -34,7 +34,7 @@
       "totalPages": 324,
       "rating": 4.8,
       "category": "Fiction",
-      "tags": ["Classic", "Legal Drama", "Coming-of-Age"],
+      "tags": ["Classic","Coming-of-Age"],
       "publisher": "J. B. Lippincott & Co.",
       "yearOfPublishing": 1960
     },
@@ -47,7 +47,7 @@
       "totalPages": 277,
       "rating": 4.4,
       "category": "Fiction",
-      "tags": ["Classic", "Coming-of-Age", "Literary"],
+      "tags": ["Classic", "Coming-of-Age"],
       "publisher": "Little, Brown and Company",
       "yearOfPublishing": 1951
     },
@@ -60,7 +60,7 @@
       "totalPages": 310,
       "rating": 4.6,
       "category": "Fantasy",
-      "tags": ["Adventure", "Epic", "Quest"],
+      "tags": ["Epic", "Quest"],
       "publisher": "Allen & Unwin",
       "yearOfPublishing": 1937
     },
@@ -73,7 +73,7 @@
       "totalPages": 279,
       "rating": 4.9,
       "category": "Fiction",
-      "tags": ["Romance", "Classic", "Regency"],
+      "tags": ["Romance", "Classic"],
       "publisher": "T. Egerton, Whitehall",
       "yearOfPublishing": 1813
     }
