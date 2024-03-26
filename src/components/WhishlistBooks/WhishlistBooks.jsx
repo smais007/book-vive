@@ -3,7 +3,7 @@ import { getBooks } from "../../utils/index";
 
 export default function WishlistBooks() {
   const [books, setBooks] = useState([]);
-  const [readBookIds, setReadBookIds] = useState([]);
+  const [readBookIds] = useState([]);
 
   useEffect(() => {
     const readBooks = getBooks("whish");

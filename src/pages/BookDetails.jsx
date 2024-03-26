@@ -25,7 +25,7 @@ export default function BookDetails() {
               <Tab.Panel key={book.bookName}>
                 <img
                   src={book.image}
-                  className="h-full w-full object-cover object-center sm:rounded-lg"
+                  className="h-2/3 w-full object-cover object-center sm:rounded-lg"
                 />
               </Tab.Panel>
             </Tab.Panels>
