@@ -1,4 +1,5 @@
 import Banner from "../components/Banner/Banner";
+// import BookDetails from "./BookDetails";
 import Books from "../components/Books/Books";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Books></Books>
+      {/* <BookDetails></BookDetails> */}
     </div>
   );
 };
