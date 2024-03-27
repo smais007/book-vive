@@ -1,4 +1,3 @@
-import { toast } from "sonner";
 
 export const getBooks = (list) => {
   const storedBooks = localStorage.getItem("books");
@@ -21,7 +20,7 @@ export const saveBook = (book, list) => {
     return false;
   });
 
-  if (isExist) return toast.error("book already exists");
+  if (isExist) return;
   books.push({ ...book, list });
   localStorage.setItem("books", JSON.stringify(books));
 };

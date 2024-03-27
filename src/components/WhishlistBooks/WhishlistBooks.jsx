@@ -3,19 +3,19 @@ import { getBooks } from "../../utils/index";
 
 export default function WishlistBooks() {
   const [books, setBooks] = useState([]);
-  const [readBookIds] = useState([]);
+  const [readBookIds, setReadBookIds] = useState([]);
 
   useEffect(() => {
     const readBooks = getBooks("whish");
     setBooks(readBooks);
-    // const readIds = readBooks.map((book) => book.bookId);
+    const readIds = readBooks.map((book) => book.bookId);
     // console.log(readIds);
-    // setReadBookIds(readIds);
+    setReadBookIds(readIds);
   }, []);
 
   const addToWishlist = (book) => {
     if (readBookIds.includes(book.bookId)) {
-      console.log("Cannot add book to wishlist. Already in 'Read' section.");
+      alert("Cannot add book to wishlist. Already in 'Read' section.");
       return;
     }
   };
@@ -64,8 +64,8 @@ export default function WishlistBooks() {
                       <div className="flex">
                         <p>Category: {book.category}</p>
                         <p>Rating: {book.rating}</p>
-                        <button onClick={() => addToWishlist(book)}>
-                          Add to Wishlist
+                        <button  className="px-4 bg-green-300 py-3"onClick={() => addToWishlist(book)}>
+                          Add to Read
                         </button>
                       </div>
                     </div>
