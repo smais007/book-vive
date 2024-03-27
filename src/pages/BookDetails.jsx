@@ -1,6 +1,6 @@
 import { Tab } from "@headlessui/react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { readBook } from "../utils";
+import { readBook, wishlistBook } from "../utils";
 import { toast } from "sonner";
 
 export default function BookDetails() {
@@ -12,11 +12,11 @@ export default function BookDetails() {
   const handleRead = () => {
     readBook(idInt);
     toast.success("You read the book");
-
-    // alert("Book Readed");
   };
 
-  const handleWhish = () => {};
+  const handleWhish = () => {
+    wishlistBook(idInt);
+  };
 
   return (
     <div className="bg-white">
