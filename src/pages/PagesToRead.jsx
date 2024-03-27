@@ -1,30 +1,14 @@
 /* eslint-disable react/prop-types */
 // PagesToRead
 
+import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import { getStoredReadBook } from "../utils";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
-const data = [
-  {
-    name: "Page A",
-    uv: 10,
-    pv: 0,
-    amt: 0,
-  },
-  {
-    name: "Page B",
-    uv: 0,
-    pv: 0,
-    amt: 0,
-  },
-  {
-    name: "Page C",
-    uv: 0,
-    pv: 0,
-    amt: 0,
-  },
-];
+
 
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
@@ -44,13 +28,28 @@ const TriangleBar = (props) => {
 };
 
 export default function PagesToRead() {
+  const [pageRead] = useState(useLoaderData() || []);
+  const [readPage, setReadPage] = useState([]);
+
+  useEffect(() => {
+    const storedReadPage = getStoredReadBook();
+    const pageReadData = pageRead.filter((book) =>
+      storedReadPage.includes(book.bookId)
+    );
+
+    const charData = pageReadData.map((page) => ({
+      name: page.bookName,
+      uv: page.totalPages,
+    }));
+    setReadPage(charData);
+  }, [pageRead]);
   return (
     <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <BarChart
         className="w-full"
         width={1280}
         height={500}
-        data={data}
+        data={readPage}
         margin={{
           top: 20,
           right: 30,
@@ -67,7 +66,7 @@ export default function PagesToRead() {
           shape={<TriangleBar />}
           label={{ position: "top" }}
         >
-          {data.map((entry, index) => (
+          {readPage.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % 20]} />
           ))}
         </Bar>

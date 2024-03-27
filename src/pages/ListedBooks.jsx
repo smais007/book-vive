@@ -1,6 +1,21 @@
+import Filter from "../components/Filter/Filter";
 import Tab from "../components/Tab/Tab";
 
 const ListedBooks = () => {
+  const handleSortByName = async () => {
+    const req = await fetch("/books.json");
+    const res = await req.json();
+
+    function compare(prop) {
+      return function (a, b) {
+        console.log(prop); // outputs -> name
+        return -1; // sort stuff
+      };
+    }
+
+    const data = res.sort(compare("bookName"));
+  };
+
   return (
     <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
       {/* Title Text */}
@@ -8,7 +23,7 @@ const ListedBooks = () => {
         <h1 className="text-[#131313] font-bold text-3xl text-center">Books</h1>
       </div>
       <div>
-        <button>Filter Books</button>
+        <Filter ></Filter>
       </div>
       <Tab></Tab>
     </div>

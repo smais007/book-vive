@@ -6,6 +6,7 @@ import BookDetails from "../pages/BookDetails";
 import ReadBooks from "../components/ReadBooks/ReadBooks";
 import WhishlistBooks from "../components/WhishlistBooks/WhishlistBooks";
 import PagesToRead from "../pages/PagesToRead";
+import Filter from "../components/Filter/Filter";
 
 export const router = createBrowserRouter([
   {
@@ -16,32 +17,63 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("./books.json"),
+        loader: async () => {
+          const req = await fetch("/books.json");
+
+          const res = await req.json();
+
+          return res;
+        },
       },
       {
         path: "/listed-books",
-        element: <ListedBooks></ListedBooks>,
+        element: <ListedBooks />,
         children: [
           {
             index: true,
             element: <ReadBooks></ReadBooks>,
-            loader: () => fetch("./books.json"),
+            loader: async () => {
+              const req = await fetch("/books.json");
+
+              const res = await req.json();
+
+              return res;
+            },
           },
           {
             path: "w-books",
             element: <WhishlistBooks></WhishlistBooks>,
-            loader: () => fetch("./books.json"),
+            loader: async () => {
+              const req = await fetch("/books.json");
+
+              const res = await req.json();
+
+              return res;
+            },
           },
         ],
       },
       {
-        path:"/pages-to-read",
-        element : <PagesToRead></PagesToRead>
+        path: "/pages-to-read",
+        element: <PagesToRead></PagesToRead>,
+        loader: async () => {
+          const req = await fetch("/books.json");
+
+          const res = await req.json();
+
+          return res;
+        },
       },
       {
         path: "/:id",
         element: <BookDetails></BookDetails>,
-        loader: () => fetch("./books.json"),
+        loader: async () => {
+          const req = await fetch("/books.json");
+
+          const res = await req.json();
+
+          return res;
+        },
       },
     ],
   },

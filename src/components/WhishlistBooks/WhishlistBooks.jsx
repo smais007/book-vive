@@ -3,7 +3,7 @@ import { getStoredWishlist } from "../../utils";
 import { useEffect, useState } from "react";
 
 export default function WishlistBooks() {
-  const books = useLoaderData();
+  const [books] = useState(useLoaderData() || []);
   const [wishlistData, setWishlistData] = useState([]);
   useEffect(() => {
     const wishIds = getStoredWishlist();
