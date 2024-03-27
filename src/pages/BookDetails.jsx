@@ -1,6 +1,7 @@
 import { Tab } from "@headlessui/react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBook } from "../utils";
+import { readBook } from "../utils";
+import { toast } from "sonner";
 
 export default function BookDetails() {
   const books = useLoaderData();
@@ -8,13 +9,14 @@ export default function BookDetails() {
   const idInt = parseInt(id);
   const book = books.find((book) => book.bookId === idInt);
 
-  const handleRead = (book) => {
-    saveBook(book, "read");
+  const handleRead = () => {
+    readBook(idInt);
+    toast.success("You read the book");
+
+    // alert("Book Readed");
   };
 
-  const handleWhish = (book) => {
-    saveBook(book, "whish");
-  };
+  const handleWhish = () => {};
 
   return (
     <div className="bg-white">

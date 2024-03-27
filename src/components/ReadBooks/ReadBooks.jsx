@@ -1,14 +1,20 @@
-import { useState, useEffect } from "react";
-import { getBooks } from "../../utils/index";
+import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { getStoredReadBook } from "../../utils";
 
 export default function ReadBooks() {
-  const [books, setBooks] = useState([]);
-
+  const [readedBook, setReadedBook] = useState([]);
+  const books = useLoaderData();
   useEffect(() => {
-    const readBooks = getBooks("read");
-
-    setBooks(readBooks);
-  }, []);
+    const storedReadIds = getStoredReadBook();
+    if (books.length > 0) {
+      const readBook = books.filter((book) =>
+        storedReadIds.includes(book.bookId)
+      );
+      console.log();
+      setReadedBook(readBook);
+    }
+  }, [books]);
 
   return (
     <div className="bg-white">
@@ -19,7 +25,7 @@ export default function ReadBooks() {
           </h2>
 
           <div className="space-y-8">
-            {books.map((book) => (
+            {readedBook.map((book) => (
               <div
                 key={book.bookId}
                 className="border-b border-t border-[#13131399] bg-white shadow-sm sm:rounded-lg sm:border"
@@ -65,5 +71,14 @@ export default function ReadBooks() {
         </section>
       </main>
     </div>
+
+    // <div>
+    //   <h1>{readedBook.length}</h1>
+    //   {readedBook.map((book) => (
+    //     <div key={book.bookId}>
+    //       <h1>{book.bookName}</h1>
+    //     </div>
+    //   ))}
+    // </div>
   );
 }

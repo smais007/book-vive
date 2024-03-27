@@ -1,26 +1,18 @@
-
-export const getBooks = (list) => {
-  const storedBooks = localStorage.getItem("books");
-  if (storedBooks === null) return [];
-  const data = JSON.parse(storedBooks);
-  return data.filter((node) => node.list === list);
+const getStoredReadBook = () => {
+  const storedReadBook = localStorage.getItem("read-books");
+  if (storedReadBook) {
+    return JSON.parse(storedReadBook);
+  }
+  return [];
+};
+const readBook = (bookId) => {
+  const storedReadBooks = getStoredReadBook();
+  const exists = storedReadBooks.find((readId) => readId === bookId);
+  if (!exists) {
+    storedReadBooks.push(bookId);
+    localStorage.setItem("read-books", JSON.stringify(storedReadBooks));
+  }
+  // alert("Alreay readed");
 };
 
-export const saveBook = (book, list) => {
-  let books = JSON.parse(localStorage.getItem("books")) || [];
-
-  const isExist = books.find((b) => {
-    if (b.list === "read" && list === "wish" && b.bookId === book.bookId) {
-      return true;
-    }
-
-    if (b.bookId === book.bookId && b.list === list) {
-      return true;
-    }
-    return false;
-  });
-
-  if (isExist) return;
-  books.push({ ...book, list });
-  localStorage.setItem("books", JSON.stringify(books));
-};
+export { getStoredReadBook, readBook };
