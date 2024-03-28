@@ -8,6 +8,7 @@ const navigation = [
   { name: "Listed Books", href: "/listed-books" },
   { name: "Pages to Read", href: "/pages-to-read" },
   { name: " Featured Book", href: "/featured-book" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {

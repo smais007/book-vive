@@ -1,54 +1,222 @@
+/*
+  This example requires some changes to your config:
 
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+*/
+import {
+  BuildingOffice2Icon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 
-const Contact = () => {
-    return (
-        <div>
-           <section className="py-6 bg-gray-100 text-gray-900">
-	<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
-		<div className="py-6 md:py-0 md:px-6">
-			<h1 className="text-4xl font-bold">Get in touch</h1>
-			<p className="pt-2 pb-4">Fill in the form to start a conversation</p>
-			<div className="space-y-4">
-				<p className="flex items-center">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
-						<path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
-					</svg>
-					<span>Fake address, 9999 City</span>
-				</p>
-				<p className="flex items-center">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
-						<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-					</svg>
-					<span>123456789</span>
-				</p>
-				<p className="flex items-center">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
-						<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-						<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-					</svg>
-					<span>contact@business.com</span>
-				</p>
-			</div>
-		</div>
-		<form novalidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
-			<label className="block">
-				<span className="mb-1">Full name</span>
-				<input type="text" placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800" />
-			</label>
-			<label className="block">
-				<span className="mb-1">Email address</span>
-				<input type="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800" />
-			</label>
-			<label className="block">
-				<span className="mb-1">Message</span>
-				<textarea rows="3" className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800"></textarea>
-			</label>
-			<button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-green-500 text-gray-900 focus:ring-violet-400 hover:ring-violet-400">Submit</button>
-		</form>
-	</div>
-</section>
+export default function Contact() {
+  return (
+    <div className="relative isolate bg-white">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+        <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
+          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+            <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2">
+              <svg
+                className="absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                aria-hidden="true"
+              >
+                <defs>
+                  <pattern
+                    id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
+                    width={200}
+                    height={200}
+                    x="100%"
+                    y={-1}
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path d="M130 200V.5M.5 .5H200" fill="none" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" strokeWidth={0} fill="white" />
+                <svg x="100%" y={-1} className="overflow-visible fill-gray-50">
+                  <path d="M-470.5 0h201v201h-201Z" strokeWidth={0} />
+                </svg>
+                <rect
+                  width="100%"
+                  height="100%"
+                  strokeWidth={0}
+                  fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+                />
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+              Get in touch
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Fill out the form below to send us your questions, comments, or
+              suggestions. We value your input and will strive to respond
+              promptly. We look forward to hearing from you!
+            </p>
+            <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
+              <div className="flex gap-x-4">
+                <dt className="flex-none">
+                  <span className="sr-only">Address</span>
+                  <BuildingOffice2Icon
+                    className="h-7 w-6 text-gray-400"
+                    aria-hidden="true"
+                  />
+                </dt>
+                <dd>
+                  545 Mavis Island
+                  <br />
+                  Chicago, IL 99191
+                </dd>
+              </div>
+              <div className="flex gap-x-4">
+                <dt className="flex-none">
+                  <span className="sr-only">Telephone</span>
+                  <PhoneIcon
+                    className="h-7 w-6 text-gray-400"
+                    aria-hidden="true"
+                  />
+                </dt>
+                <dd>
+                  <a
+                    className="hover:text-gray-900"
+                    href="tel:+1 (555) 234-5678"
+                  >
+                    +1 (555) 234-5678
+                  </a>
+                </dd>
+              </div>
+              <div className="flex gap-x-4">
+                <dt className="flex-none">
+                  <span className="sr-only">Email</span>
+                  <EnvelopeIcon
+                    className="h-7 w-6 text-gray-400"
+                    aria-hidden="true"
+                  />
+                </dt>
+                <dd>
+                  <a
+                    className="hover:text-gray-900"
+                    href="mailto:hello@example.com"
+                  >
+                    hello@example.com
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
         </div>
-    );
-};
-
-export default Contact;
+        <form
+          action="#"
+          method="POST"
+          className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+        >
+          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="first-name"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  First name
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    autoComplete="given-name"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="last-name"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Last name
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    autoComplete="family-name"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Email
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autoComplete="email"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="phone-number"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Phone number
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    type="tel"
+                    name="phone-number"
+                    id="phone-number"
+                    autoComplete="tel"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Message
+                </label>
+                <div className="mt-2.5">
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows={4}
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    defaultValue={""}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 flex justify-end">
+              <button
+                type="submit"
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Send message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
