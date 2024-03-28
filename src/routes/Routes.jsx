@@ -6,13 +6,15 @@ import BookDetails from "../pages/BookDetails";
 import ReadBooks from "../components/ReadBooks/ReadBooks";
 import WhishlistBooks from "../components/WhishlistBooks/WhishlistBooks";
 import PagesToRead from "../pages/PagesToRead";
-import Filter from "../components/Filter/Filter";
+import FeaturedBook from "../pages/FeaturedBook";
+import Error from "../pages/Error";
+import Contact from "../pages/Contact";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    // errorElement: <Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -74,6 +76,14 @@ export const router = createBrowserRouter([
 
           return res;
         },
+      },
+      {
+        path: "//featured-book",
+        element: <FeaturedBook></FeaturedBook>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
     ],
   },

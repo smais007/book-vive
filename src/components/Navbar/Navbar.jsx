@@ -7,7 +7,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Listed Books", href: "/listed-books" },
   { name: "Pages to Read", href: "/pages-to-read" },
-  { name: "Popular Books", href: "/popular" },
+  { name: " Featured Book", href: "/featured-book" },
 ];
 
 export default function Navbar() {
@@ -44,7 +44,7 @@ export default function Navbar() {
             <NavLink
               to={item.href}
               key={item.name}
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 isActive
                   ? "text-sm font-semibold leading-6 text-[#23BE0A]"
                   : "text-sm font-semibold leading-6 text-gray-900"
