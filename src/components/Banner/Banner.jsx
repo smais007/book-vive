@@ -5,7 +5,7 @@ const Banner = () => {
     <div className="max-w-6xl mx-auto">
       <div className="hero  bg-base-200 rounded-2xl">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src="/src/images/pngwing 1.png" alt="" />
+          <img src="../pngwing 1.png" alt="" />
           <div className="lg:mr-20">
             <h1 className="lg:text-5xl text-xl font-bold">
               Books to freshen up <br /> your bookshelf

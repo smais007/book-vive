@@ -22,8 +22,8 @@ const ListedBooks = () => {
       <div className="bg-[#1313130D] py-8 rounded-2xl">
         <h1 className="text-[#131313] font-bold text-3xl text-center">Books</h1>
       </div>
-      <div>
-        <Filter ></Filter>
+      <div className="pt-9 pb-14">
+        <Filter></Filter>
       </div>
       <Tab></Tab>
     </div>

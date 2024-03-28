@@ -18,8 +18,6 @@ export default function Filter() {
     }
 
     const data = res.sort(compare("bookName"));
-
-    
   };
 
   const handleSortByPublication = () => {};
@@ -51,7 +49,7 @@ export default function Filter() {
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  by Name
+                  by Rating
                 </a>
               )}
             </Menu.Item>
@@ -64,7 +62,7 @@ export default function Filter() {
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  Publi
+                  By Page
                 </a>
               )}
             </Menu.Item>
@@ -77,25 +75,10 @@ export default function Filter() {
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  License
+                  By Publication Year
                 </a>
               )}
             </Menu.Item>
-            <form method="POST" action="#">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="submit"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block w-full px-4 py-2 text-left text-sm"
-                    )}
-                  >
-                    Sign out
-                  </button>
-                )}
-              </Menu.Item>
-            </form>
           </div>
         </Menu.Items>
       </Transition>
