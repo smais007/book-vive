@@ -1,6 +1,6 @@
 const features = [
   {
-    name: "Three card types",
+    name: "হাবলুদের জন্য প্রোগ্রামিং",
     description:
       "Today, Next, and Someday cards allow you to defer your dreams into the future.",
     imageSrc:
@@ -40,11 +40,8 @@ const FeaturedBook = () => {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
         <div className="max-w-3xl">
-          <h2 id="features-heading" className="font-medium text-gray-500">
-            Focus
-          </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Simple productivity
+            Featured Book
           </p>
           <p className="mt-4 text-gray-500">
             Focus allows you to plan 10 daily tasks, while also thinking ahead
